@@ -1,0 +1,42 @@
++--------------+
+| sensor-board |
++--------------+
+
+ATtiny25
+
+PINOUT:
+ATtiny | usbasp | internal | UART
+-------+--------+----------+------
+1  PB5 | RST    |          |
+2  PB3 |        | HALL 2   |
+3  PB4 |        | HALL 0   |
+4  GND |        |          | GND
+5  PB0 | MOSI   |          | DI
+6  PB1 | MISO   |          | DO
+7  PB2 | SCK    | HALL 1   |
+8  VCC |        |          | VCC
+
+
+           J1
+      1   2   3   4
+    +---+---+---+---+
+    |MOS|MIS|VCC|GND|
++---+---+---+---+---+---+
+|SCK|               |RST|
++---+               +---+
+ J4                  J2
+
+
+           J1
+      1   2   3   4
+    +---+---+---+---+
+    |RXD|TXD|VCC|GND|
++---+---+---+---+---+---+
+|HA1|               |   |
++---+               +---+
+ J4                  J2
+
+
+rychlost by mohla být co největší, kterou ještě ATtiny25 @ 8MHz zvládne (nebo to chci vytáhnout na 16MHz?)
+
+každopádně alespoň 115 200

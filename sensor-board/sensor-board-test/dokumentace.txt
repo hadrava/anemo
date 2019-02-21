@@ -1,0 +1,24 @@
++-------------------+
+| sensor-board-test |
++-------------------+
+
+ATtiny25
+
+Primitivní kód, který jen kopíruje vstup z HALL 0 a HALL 2 na piny TXD a RXD.
+
+Z externího hlediska je signál mapovaný na piny následovně:
+
+           J1
+      1   2   3   4
+    +---+---+---+---+
+    |HA2|HA0|VCC|GND|
++---+---+---+---+---+---+
+|HA1|               |   |
++---+               +---+
+ J4                  J2
+
+HALL 2 porovnává s VCC/2 + epsilon
+HALL 1 porovnává s VCC/2
+HALL 0 porovnává s VCC/2 - epsilon
+
+HALL 2 je tedy ve stavu 1 nejkratší čas a HALL 0 nejdelší
